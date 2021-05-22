@@ -65,4 +65,8 @@ td:hover::after {
   font-weight: bold;
   text-align: center;
   color: red;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  margin-left: 8%;
+  margin-right: 8%;
 }
