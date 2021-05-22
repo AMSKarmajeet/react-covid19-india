@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './stateWise.css';
 
 const Statewise = () => {
@@ -61,14 +62,14 @@ const Statewise = () => {
                   {
                     data.map((curElem, ind) => {
                       return (
-                        <tr key={ind}>
-                          <th> {curElem.state} </th>
-                          <td> {curElem.confirmed} </td>
-                          <td> {curElem.recovered} </td>
-                          <td> {curElem.deaths} </td>
-                          <td> {curElem.active} </td>
-                          <td> {curElem.lastupdatedtime} </td>
-                        </tr>
+                          <tr key={ind}>
+                            <th><Link to='/districts'> {curElem.state} </Link></th>
+                            <td><Link to='/districts'> {curElem.confirmed} </Link></td>
+                            <td><Link to='/districts'> {curElem.recovered} </Link></td>
+                            <td><Link to='/districts'> {curElem.deaths} </Link></td>
+                            <td><Link to='/districts'> {curElem.active} </Link></td>
+                            <td><Link to='/districts'> {curElem.lastupdatedtime} </Link></td>
+                          </tr>
                       )
                     })
                   }

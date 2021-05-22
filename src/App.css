@@ -8,6 +8,7 @@
 .home,
 .states,
 .about,
+.districts,
 .sign-up {
   display: flex;
   height: 90vh;
@@ -35,6 +36,16 @@
 }
 
 .sign-up {
+  background-color: rgb(250, 250,250);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: rgb(105,105,105);
+  font-size: 100px;
+  text-align: center;
+}
+
+.districts {
   background-color: rgb(250, 250,250);
   background-position: center;
   background-size: cover;

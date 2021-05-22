@@ -7,14 +7,12 @@ import Footer from '../Footer';
 // import image from '../../images/image.png';
 
 class States extends React.Component {
-  
+
   render() {
     return (
       <>
-        <>
-          <Statewise />
-        </>
-      <Footer />
+        <Statewise />
+        <Footer />
       </>
     );
   }

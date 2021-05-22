@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import States from './components/pages/States';
 import About from './components/pages/About';
 import SignUp from './components/pages/SignUp';
+import Districts from './components/pages/Districts';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path='/states' component={States} />
           <Route path='/about' component={About} />
           <Route path='/sign-up' component={SignUp} />
+          <Route path='/districts' component={Districts} />
         </Switch>
       </Router>
     </>

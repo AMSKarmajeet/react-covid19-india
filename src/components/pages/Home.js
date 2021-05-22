@@ -30,6 +30,7 @@ class Home extends React.Component {
 
     return (
       <>
+
         <div className='container'>
           <img className='image' src={image} alt="COVID-19" />
           <Cards data={data} />
