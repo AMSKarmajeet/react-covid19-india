@@ -1,18 +1,45 @@
-import axios from 'axios';
+import React, {useEffect} from 'react';
 
-const urla = 'https://api.covid19india.org/state_district_wise.json';
+export const indiaDailyData = async () => {
+  try {
+    const res = await fetch('https://api.covid19india.org/data.json');
+    let actualData = await res.json();
 
-const urlb = 'https://api.covid19india.org/v4/min/data.min.json';
+    console.log(actualData.cases_time_series);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export const getCovidData = async () => {
+    try {
+      const res = await fetch('https://api.covid19india.org/data.json');
+      let actualData = await res.json();
+
+      console.log(actualData.statewise[0]);
+    } catch (error){
+      console.log(error);
+    }
+  }
+
+
+/* import axios from 'axios';
+
+const urla = 'https://api.covid19india.org/state_district_wise.json'; // Contains Statename and districtwise data { Semi Cleaned JSON }
+
+const urlb = 'https://api.covid19india.org/v4/min/data.min.json'; // Statename absent {only state code} Districtwise raw data
+
+const urlc = 'https://api.covid19india.org/data.json';    // Contains India's Time Series data and Statewise data { Cleaned JSON } Statename Presents
 
 export const fetchData = async (country) => {
-  let changeableUrl = url;
+  // let changeableUrl = url;
 
-  if (country) {
+   if (country) {
     changeableUrl = `${url}/countries/${country}`;
   }
 
   try {
-    const { data: { confirmed, recovered, deaths, lastUpdate } } = await axios.get(changeableUrl);
+    const { data: { confirmed, recovered, deaths, lastUpdate }  = await axios.get(urlc);
 
     return { confirmed, recovered, deaths, lastUpdate };
   } catch (error) {
@@ -22,9 +49,9 @@ export const fetchData = async (country) => {
 
 export const fetchDailyData = async () => {
   try {
-    const { data } = await axios.get(`${url}/daily`);
+    const { data } = await axios.get(`${urlc}`);
 
-    return data.map(({ confirmed, deaths, reportDate: date }) => ({ confirmed: confirmed.total, deaths: deaths.total, date }));
+    return data.map(({ totalconfirmed, totaldeaths, reportDate: date }) => ({ confirmed: confirmed.total, deaths: deaths.total, date }));
   } catch (error) {
     return error;
   }
@@ -50,3 +77,4 @@ export const fetchCountries = async () => {
     return error;
   }
 };
+*/

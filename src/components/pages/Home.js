@@ -36,7 +36,6 @@ class Home extends React.Component {
           <h2>Pick a Country</h2>
           <CountryPicker handleCountryChange={this.handleCountryChange} />
           <Chart data={data} country={country} />
-          <button type="button">Details</button>
         </div>
 
       <Footer />
