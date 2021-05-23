@@ -43,7 +43,7 @@ const Statewise = () => {
     <>
       <div className="container-fluid mt-5">
         <div className="main-heading">
-          <h1 className="mb-5 text-center">INDIA COVID-19 Dashboard</h1>
+          <h1 className="mb-5 text-center">Statewise COVID-19 Dashboard</h1>
         </div>
 
         <div className="table-responsive">
@@ -61,14 +61,15 @@ const Statewise = () => {
               <tbody>
                   {
                     data.map((curElem, ind) => {
+                      let stateName = curElem.state;
                       return (
                           <tr key={ind}>
-                            <th><Link to='/districts'> {curElem.state} </Link></th>
-                            <td><Link to='/districts'> {curElem.confirmed} </Link></td>
-                            <td><Link to='/districts'> {curElem.recovered} </Link></td>
-                            <td><Link to='/districts'> {curElem.deaths} </Link></td>
-                            <td><Link to='/districts'> {curElem.active} </Link></td>
-                            <td><Link to='/districts'> {curElem.lastupdatedtime} </Link></td>
+                            <th><Link to={{ pathname: '/districts', stateProps: stateName }} > {curElem.state} </Link></th>
+                            <td><Link to={{ pathname: '/districts', stateProps: stateName }} > {curElem.confirmed} </Link></td>
+                            <td><Link to={{ pathname: '/districts', stateProps: stateName }} > {curElem.recovered} </Link></td>
+                            <td><Link to={{ pathname: '/districts', stateProps: stateName }} > {curElem.deaths} </Link></td>
+                            <td><Link to={{ pathname: '/districts', stateProps: stateName }} > {curElem.active} </Link></td>
+                            <td><Link to={{ pathname: '/districts', stateProps: stateName }} > {curElem.lastupdatedtime} </Link></td>
                           </tr>
                       )
                     })

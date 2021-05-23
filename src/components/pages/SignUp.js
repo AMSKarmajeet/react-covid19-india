@@ -5,7 +5,7 @@ import Footer from '../Footer';
 export default function SignUp() {
   return (
     <>
-      <h1 className='sign-up'>Sign Up for newsletter Page Under Construction!</h1>
+      <h1 className='sign-up'>This is a Demo Sign Up page for this assignment!</h1>
       <Footer />
     </>
   );
