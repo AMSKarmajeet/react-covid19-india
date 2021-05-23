@@ -30,7 +30,6 @@ class Home extends React.Component {
 
     return (
       <>
-
         <div className='container'>
           <h1 className="homeHeading">Countrywise COVID-19 Status</h1>
           <Cards data={data} />
@@ -38,7 +37,6 @@ class Home extends React.Component {
           <CountryPicker handleCountryChange={this.handleCountryChange} />
           <Chart data={data} country={country} />
         </div>
-
       <Footer />
       </>
     );

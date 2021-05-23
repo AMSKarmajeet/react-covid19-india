@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+
 import './stateWise.css';
 
 const Statewise = () => {
 
-  const [data, setData] = useState([]);
+  const [stateData, setstateData] = useState([]);
   const [loading, setLoading] = useState(false);
   // const [error, setError] = useState();
 
@@ -22,7 +23,7 @@ const Statewise = () => {
     fetch('https://api.covid19india.org/data.json')
       .then((res) => res.json())
       .then((datab) => {
-        setData(datab.statewise);
+        setstateData(datab.statewise);
         console.log(datab.statewise);
       })
       .catch((err) => {
@@ -60,7 +61,7 @@ const Statewise = () => {
               </thead>
               <tbody>
                   {
-                    data.map((curElem, ind) => {
+                    stateData.map((curElem, ind) => {
                       let stateName = curElem.state;
                       return (
                           <tr key={ind}>
@@ -79,7 +80,7 @@ const Statewise = () => {
         </div>
       </div>
     </>
-  )
+  );
 }
 
 export default Statewise;
