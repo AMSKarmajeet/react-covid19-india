@@ -5,7 +5,7 @@ import { fetchData } from '../../api/';
 import '../../App.css';
 import Footer from '../Footer';
 
-import image from '../../images/image.png';
+// import image from '../../images/image.png';
 
 class Home extends React.Component {
   state = {
@@ -32,7 +32,7 @@ class Home extends React.Component {
       <>
 
         <div className='container'>
-          <img className='image' src={image} alt="COVID-19" />
+          <h1 className="homeHeading">Countrywise COVID-19 Status</h1>
           <Cards data={data} />
           <h2>Pick a Country</h2>
           <CountryPicker handleCountryChange={this.handleCountryChange} />
