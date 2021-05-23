@@ -25,7 +25,7 @@ const Districts = (props) => {
       .finally(() => {
         setLoading(false);
       });
-  }, []);
+  }, [setdistrictData]);
 
   if (loading) {
     return <p>Data is loading...</p>
@@ -61,7 +61,7 @@ const Districts = (props) => {
                   {
                     Object.keys(districtData).map(function(key, index) {
                       return (
-                        <tr>
+                        <tr key = {key}>
                           <th>{ key }</th>
                           <th>{ districtData[key].active }</th>
                           <th>{ districtData[key].confirmed }</th>
